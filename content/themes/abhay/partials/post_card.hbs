@@ -1,0 +1,80 @@
+<article class="card">
+<div class="container">
+    {{!-- code for geeting post content --}}
+    <div class="content">
+             <a class="post-card-content-link" href="{{url}}">
+
+            <header class="post-card-header">
+                {{#if primary_tag}}
+                    {{#primary_tag}}
+                    <div class="post-card-primary-tag">{{name}}</div>
+                    {{/primary_tag}}
+                {{/if}}
+                <h2 class="post-card-title">{{title}}</h2>
+            </header>
+
+              {{!-- code for getting post image --}}
+    {{#if feature_image}}
+    <div class="card-image">
+        <figure class="image is-4by3">
+            <img src="{{feature_image}}" alt="{{title}}">
+        </figure>
+
+
+    </div>
+
+            <section class="post-card-excerpt">
+                {{#if feature_image}}
+                    <p>{{excerpt words="30"}}</p>
+                {{else}}
+                    <p>{{excerpt words="44"}}</p>
+                {{/if}}
+            </section>
+
+        </a>
+        </div>
+  
+
+    {{!-- code for author details --}}
+    
+    {{/if}}
+    <div class="card-content">
+        
+                   <footer class="post-card-meta">
+            <ul class="author-list">
+                {{#foreach authors}}
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        {{name}}
+                    </div>
+            
+                    {{#if profile_image}}
+                    <figure class="image is-48x48">
+                         <a href="{{url}}" class="static-avatar">
+                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                    </a>
+                    {{else}}
+                    <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                    {{/if}}
+                    </figure>
+                   
+                </li>
+                {{/foreach}}
+            </ul>
+            <div class="post-card-byline-content">
+                <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
+                <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+            </div>
+        </footer>
+      
+        
+
+    </div>
+
+</div>
+
+</article>
+
+
+

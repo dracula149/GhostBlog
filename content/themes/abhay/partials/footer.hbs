@@ -1,0 +1,36 @@
+<footer class="footer is-centered">
+    <div class="container">
+        <div class="columns">
+            <div class="columns">
+{{!-- code for geeting names of recent post --}}
+                {{#get "posts" limit="5" as |recent|}}
+               <section class="recent-posts">
+                   <h3>Recent Posts</h3>
+                   <ul>
+                       {{#foreach recent}}
+                       <li>
+                           <a href="{{url}}">{{title}}</a>
+
+                       </li>
+                       {{/foreach}}
+                   </ul>
+               </section>
+               {{/get}}
+
+          </div>
+             {{!--  code for getting tags of post in the footer --}}
+            <div class="columns is-mobile">
+                
+  <div class="column is-4 is-offset-8">
+      <p>where i am now ?</p>
+<div class="mapouter"><div class="gmap_canvas"><iframe width="359" height="367" id="gmap_canvas" src="https://maps.google.com/maps?q=bangalore&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org">put locker plus</a></div><style>.mapouter{position:relative;text-align:right;height:367px;width:359px;}.gmap_canvas {overflow:hidden;background:none!important;height:367px;width:359px;}</style></div>
+    </div>
+    </div>
+      
+           
+        </div>
+    </div>
+  
+
+</footer>
+

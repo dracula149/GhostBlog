@@ -1,0 +1,28 @@
+{{!< default}}
+   {{>image}}
+
+
+
+
+<main class="container">
+    <div class="columns is-multiline">
+          {{#foreach posts}}
+   {{!-- <h1><a href="{{url}}">{{title}}</a></h1> --}}
+   <div class="column is-one-third is-centered">
+          {{> post_card}}
+   </div>
+
+
+    {{/foreach}}
+    </div>
+    {{!-- display all the post using foreach --}}
+  
+</main>
+{{> author}}
+
+ 
+{{!-- 
+pagination block --}}
+<div class="container">
+       {{pagination}}
+</div>
